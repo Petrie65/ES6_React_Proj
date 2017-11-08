@@ -9,7 +9,7 @@ if (true) {
 	let score = 780;
 }
 
-console.log(score) // 100
+console.log(score); // 100
 
 CARS.push("nano"); //legal
 
@@ -119,3 +119,99 @@ console.log(deposit(100, 50, 7));
 
 let addMoney = [34, 77, 99, 24, 62];
 console.log(Math.max(...addMoney)); // 99
+
+//=============================================================
+//			MAPS
+//=============================================================
+// Map: A simple key/value map
+
+let pikachu = {
+	name: 'I am pikachu',
+	power: 'I can electrify',
+};
+
+let clifary = {
+	name: 'I am clifary',
+	power: 'I am cute',
+};
+
+let charmander = {
+	name: 'I am charmander',
+	power: 'I throw fire',
+};
+
+// Create map
+let pokemon = new Map();
+
+// set(key, value)
+pokemon.set('pika', pikachu);
+pokemon.set('cli', clifary);
+pokemon.set('char', charmander);
+
+// get size of map
+console.log(pokemon.size); // 3
+
+
+//=============================================================
+//			SET
+//=============================================================
+let DC = new Set(['Batman', 'Flash', 'Batman']);
+DC.add('Superman')
+DC.add('Superman')
+DC.add('Hulk')
+console.log(DC);
+
+for (character of DC) {
+	console.log(character);
+}
+// Returns only 1 of each batman, flash, superman, hulk
+
+console.log(marvel.has('Flash')); // returns true
+console.log(marvel.has('Iron man')); // returns false
+
+// Methods:
+mySet.add(x);
+mySet.has(x);
+mySet.delete(x);
+mySet.size;
+
+//=============================================================
+//			Getter and setter
+//=============================================================
+// Static function:
+class Uber {
+	static sayHi() {
+		console.log("I am a static function");
+	}
+}
+// let driver = new Uber(); - not necessarry
+Uber.sayHi(); // no need to create object
+
+class Driver {
+	constructor(name) {
+		// underscore indicates that it is a private member
+		// It is just a coding convention... not enforced by the language
+		this._name = name;
+	}
+
+	get myName() {
+		return this._name;
+	}
+
+	set myName(val) {
+		// Conditions would typically go here
+		this._name = val;
+	}
+}
+
+let drive = new Driver("Jack");
+console.log(drive.myName);
+// Returns Jack
+
+drive.myName = "Joe";
+console.log(drive.myName);
+// Returns Joe
+
+//=============================================================
+//			Symbols
+//=============================================================
